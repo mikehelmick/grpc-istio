@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-server
+  labels:
+    app: counter
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: counter-server
+        image: ko://github.com/mikehelmick/grpc-istio/cmd/server
